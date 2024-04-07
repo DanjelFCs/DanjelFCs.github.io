@@ -1,3 +1,17 @@
+.TextImage{
+	 display: grid;
+
+	 grid-template-columns: auto auto;
+	 column-gap: 5px;
+}
+.TextImage-Image{
+
+}
+.TextImage-Text{
+
+}
+
+
 a:focus {
 	outline: thin dotted #f89406;
 	outline: 5px auto #f89406;
