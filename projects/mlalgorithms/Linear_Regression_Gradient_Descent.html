@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>1_2_Linear_Regression_Gradient_Descent</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>1_2_Linear_Regression_Gradient_Descent (1)</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14587,6 +14587,19 @@ $$\frac{\partial I}{\partial w_k}(w_1, \cdots ,w_D)=\frac{1}{N}\sum_{j=1}^N x^k_
 $$\mathbf{w} \leftarrow \mathbf{w} - \alpha \frac{\partial I}{\partial \mathbf{w}}$$
 where $\alpha$ is the learning rate.</p>
 <p>Gradient descent is guaranteed to converge, since our loss function is <strong>CONVEX</strong>!</p>
+<p>Intuitively, it is clear, why this method works, and converges to the optimal coefficients. In my opinion, the direct solution is a lot faster and precise, but this is excelent for pedagogical purposes. If we choose some other algorith, where we can't analytically compute the optimal soltion, we can still apply this strategy (if we can compute derivatives).</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">&#182;</a></h1><p>We create dummy data by assuming $y_i\approx 1+2x_1^i+0.5 x_2^i+3x_3^i $</p>
 
 </div>
 </div>
@@ -14596,7 +14609,7 @@ where $\alpha$ is the learning rate.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14625,7 +14638,7 @@ where $\alpha$ is the learning rate.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-python"><pre><span></span><span class="c1"># We just implement the above formula (this is all the math, no more)</span>
@@ -14653,7 +14666,7 @@ where $\alpha$ is the learning rate.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#This is just iterating the process</span>
@@ -14674,7 +14687,7 @@ where $\alpha$ is the learning rate.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-python"><pre><span></span><span class="n">GradientDescent</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
@@ -14695,7 +14708,7 @@ where $\alpha$ is the learning rate.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
 
@@ -14718,7 +14731,7 @@ where $\alpha$ is the learning rate.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Our strategy works just fine, but is not as good as the direct solution, but is a lot more fun.</p>
-<p>We do need quite a bit of iterations... A lot more computing than by the direct way of computing. But for pedagogical purposes it is just fine. This algo will be used whenever we can't analytically solve for the optimal parameters as in this case (see logistic regression).</p>
+<p>We do need quite a bit of iterations... A lot more computing than by the direct way of computing. we do see some high inaccuracy in the bias term...</p>
 
 </div>
 </div>
